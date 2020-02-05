@@ -7,7 +7,7 @@ const app = express();
 app.set('port', process.env.PORT || 8080);
 
 app.use(express.static('public'));
-app.use(express.static('/uploads'));
+app.use(express.static('/uploads/images'));
 
 app.post('/upload', upload.single('photo'), (req, res) => {
     if(req.file) {
