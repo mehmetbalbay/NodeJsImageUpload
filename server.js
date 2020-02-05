@@ -3,7 +3,8 @@ const multer = require('multer');
 const upload = multer({dest: __dirname + '/uploads/images'});
 
 const app = express();
-const PORT = 8080;
+
+app.set('port', process.env.PORT || 8080);
 
 app.use(express.static('public'));
 
@@ -14,6 +15,4 @@ app.post('/upload', upload.single('photo'), (req, res) => {
     else throw 'error';
 });
 
-app.listen(PORT, () => {
-    console.log('Listening at ' + PORT);
-});
+app.listen(app.get('port'));
