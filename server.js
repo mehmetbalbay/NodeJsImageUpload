@@ -3,7 +3,7 @@ const multer = require('multer');
 const upload = multer({dest: __dirname + '/uploads/images'});
 
 const app = express();
-const PORT = 80;
+const PORT = 8080;
 
 app.use(express.static('public'));
 
