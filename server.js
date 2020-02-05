@@ -1,6 +1,6 @@
 const express = require('express');
 const multer = require('multer');
-const upload = multer({dest: __dirname + '/uploads'});
+const upload = multer({dest: __dirname + '/uploads/images'});
 
 const app = express();
 
