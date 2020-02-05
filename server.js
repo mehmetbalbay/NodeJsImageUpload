@@ -1,12 +1,13 @@
 const express = require('express');
 const multer = require('multer');
-const upload = multer({dest: __dirname + '/uploads/images'});
+const upload = multer({dest: __dirname + '/uploads'});
 
 const app = express();
 
 app.set('port', process.env.PORT || 8080);
 
 app.use(express.static('public'));
+app.use(express.static('/uploads'));
 
 app.post('/upload', upload.single('photo'), (req, res) => {
     if(req.file) {
