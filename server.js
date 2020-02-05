@@ -4,7 +4,7 @@ const upload = multer({dest: __dirname + '/uploads/images'});
 
 const app = express();
 
-app.set('port', process.env.PORT || 8080);
+app.set('port', process.env.PORT || 80);
 
 app.use(express.static('public'));
 
